@@ -1,22 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>google docs</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f0f0f0; text-align: center; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; margin-top: 20px; }
+        iframe { display: block; margin: 0 auto; }
+        
+        /* This box styles your scrolling TikTok feed container */
+        .tiktok-feed-box { 
+            max-width: 340px; 
+            height: 600px; 
+            margin: 0 auto; 
+            overflow-y: scroll; 
+            scroll-snap-type: y mandatory; 
+            border: 4px solid #000; 
+            border-radius: 16px; 
+            background: #000; 
+            padding: 10px;
+        }
+        .video-snap-slot { 
+            scroll-snap-align: start; 
+            height: 600px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to My Website!</h1>
+        <p>Check out my game stream and custom scrolling video feed below.</p>
+
+        <!-- NOW.GG ROBLOX CLOUD STREAM EMBED -->
+        <h2>Play Roblox Instantly via now.gg</h2>
+        <p>Play directly in your browser without any downloads!</p>
+        <iframe src="https://now.gg" width="100%" height="600" style="border: 4px solid #00A2FF; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" allowfullscreen></iframe>
+
+        <br><hr><br>
+
         <!-- TIKTOK SCROLLING FEED -->
         <h2>My TikTok Feed</h2>
-        <p>Scroll down inside the box to watch more videos!</p>
+        <p>Scroll down inside the black box to snap to the next video!</p>
         
-        <div style="max-width: 340px; height: 600px; margin: 0 auto; overflow-y: scroll; scroll-snap-type: y mandatory; border: 4px solid #000; border-radius: 16px; background: #000; padding: 10px 0;">
+        <div class="tiktok-feed-box">
             
             <!-- VIDEO 1 (Your original video) -->
-            <div style="scroll-snap-align: start; height: 600px; display: flex; align-items: center; justify-content: center;">
-                <iframe src="https://tiktok.com" width="325" height="580" style="border: none; border-radius: 12px;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div class="video-snap-slot">
+                <blockquote class="tiktok-embed" cite="https://tiktok.com" data-video-id="7608248907960814879" style="max-width: 325px; min-width: 325px;">
+                    <section>
+                </blockquote>
             </div>
 
-              <!-- VIDEO 2 -->
-            <div style="scroll-snap-align: start; height: 600px; display: flex; align-items: center; justify-content: center;">
-                <iframe src="https://tiktok.com" width="325" height="580" style="border: none; border-radius: 12px;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-
-            <!-- VIDEO 3 -->
-            <div style="scroll-snap-align: start; height: 600px; display: flex; align-items: center; justify-content: center;">
-                <iframe src="https://tiktok.com" width="325" height="580" style="border: none; border-radius: 12px;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <!-- VIDEO 2 (Your micahdaileywhite video) -->
+            <div class="video-snap-slot">
+                <blockquote class="tiktok-embed" cite="https://tiktok.com" data-video-id="7648426896648146189" style="max-width: 325px; min-width: 325px;">
+                    <section>
+                </blockquote>
             </div>
 
         </div>
+
+    </div>
+
+    <!-- THIS TRACKING SCRIPT MAKES THE TIOTOK VIDEOS APPEAR ON GITHUB PAGES -->
+    <script async src="https://tiktok.com"></script>
+
+</body>
+</html>
