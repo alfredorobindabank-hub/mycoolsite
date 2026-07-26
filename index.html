@@ -1,92 +1,141 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>google docs</title>
+    <title>Poki Style Hub</title>
     <style>
-        body { font-family: sans-serif; background-color: #f0f0f0; text-align: center; }
-        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 8px; margin-top: 20px; }
-        iframe { display: block; margin: 0 auto; }
-        
-        /* This box styles your scrolling TikTok feed container */
-        .tiktok-feed-box { 
-            max-width: 340px; 
-            height: 600px; 
-            margin: 0 auto; 
+        /* Poki Style Dark Theme and Reset */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #1a1a24; 
+            color: #ffffff; 
+            margin: 0; 
+            padding: 20px; 
+            text-align: center;
+        }
+
+        /* App Navbar Header */
+        header {
+            background-color: #242432;
+            padding: 15px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border-bottom: 4px solid #7c3aed;
+        }
+        header h1 { margin: 0; font-size: 28px; color: #a78bfa; text-transform: uppercase; letter-spacing: 1px; }
+        header p { margin: 5px 0 0 0; color: #9ca3af; font-size: 14px; }
+
+        /* The Main Poki Grid Container */
+        .poki-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Poki App/Game Tiles */
+        .poki-tile {
+            background-color: #242432;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            border: 2px solid #374151;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        /* Hover effect inspired by Poki's bounce styling */
+        .poki-tile:hover {
+            transform: translateY(-5px);
+            border-color: #7c3aed;
+            box-shadow: 0 12px 25px rgba(124, 58, 237, 0.3);
+        }
+
+        .poki-tile h2 { margin-top: 0; color: #f3f4f6; font-size: 20px; border-bottom: 2px solid #374151; padding-bottom: 8px; }
+        .poki-tile p { color: #9ca3af; font-size: 14px; line-height: 1.5; }
+
+        /* Poki Big Neon Play Button */
+        .poki-btn {
+            display: inline-block;
+            background-color: #7c3aed;
+            color: white;
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 12px;
+            margin-top: 15px;
+            border-bottom: 4px solid #5b21b6;
+            transition: background-color 0.1s, transform 0.1s;
+        }
+        .poki-btn:hover { background-color: #6d28d9; transform: scale(1.03); }
+        .poki-btn:active { border-bottom-width: 0px; margin-top: 19px; }
+
+        /* Scrolling Video Feed Container */
+        .poki-scroll-box { 
+            max-width: 325px; 
+            height: 550px; 
+            margin: 15px auto 0 auto; 
             overflow-y: scroll; 
             scroll-snap-type: y mandatory; 
-            border: 4px solid #000; 
             border-radius: 16px; 
             background: #000; 
-            padding: 10px;
+            padding: 5px;
+            border: 3px solid #111827;
         }
-        .video-snap-slot { 
+        .video-slot { 
             scroll-snap-align: start; 
-            height: 600px; 
+            height: 550px; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
         }
+
+        /* Hide scrollbars for a cleaner look while keeping scroll active */
+        .poki-scroll-box::-webkit-scrollbar { display: none; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Welcome to My Website!</h1>
-        <p>Check out my game stream and custom scrolling video feed below.</p>
+    <header>
+        <h1>🎮 MY POKI-STYLE HUB ⚡</h1>
+        <p>Your ultimate collection for instant gaming links and viral videos</p>
+    </header>
 
-        <!-- NOW.GG ROBLOX CLOUD STREAM EMBED -->
-        <h2>Play Roblox Instantly via now.gg</h2>
-        <p>Play directly in your browser without any downloads!</p>
-        <iframe src="https://now.gg" width="100%" height="600" style="border: 4px solid #00A2FF; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" allowfullscreen></iframe>
+    <div class="poki-grid">
 
-        <br><hr><br>
+        <!-- TILE 1: ROBLOX CONTROLLER -->
+        <div class="poki-tile">
+            <h2>🕹️ Roblox App</h2>
+            <p>Launch straight into Roblox cloud infrastructure to browse millions of user-generated lobbies instantly.</p>
+            <br>
+            <a href="https://now.gg" target="_blank" class="poki-btn">▶ PLAY NOW</a>
+        </div>
 
-        <!-- TIKTOK SCROLLING FEED -->
-        <h2>My TikTok Feed</h2>
-        <p>Scroll down inside the black box to snap to the next video!</p>
-        
-        <div class="tiktok-feed-box">
+        <!-- TILE 2: TIKTOK ENDLESS FEED -->
+        <div class="poki-tile">
+            <h2>📱 TikTok Feed</h2>
+            <p>Scroll down directly inside this dashboard block to snap and watch trending short clips.</p>
             
-            <!-- VIDEO 1 (Your original video) -->
-            <div class="video-snap-slot">
-                <blockquote class="tiktok-embed" cite="https://tiktok.com" data-video-id="7608248907960814879" style="max-width: 325px; min-width: 325px;">
-                    <section>
-                </blockquote>
+            <div class="poki-scroll-box">
+                <!-- VIDEO 1 -->
+                <div class="video-slot">
+                    <blockquote class="tiktok-embed" cite="https://tiktok.com" data-video-id="7608248907960814879" style="max-width: 315px; min-width: 315px;">
+                        <section>
+                    </blockquote>
+                </div>
+                <!-- VIDEO 2 -->
+                <div class="video-slot">
+                    <blockquote class="tiktok-embed" cite="https://tiktok.com" data-video-id="7648426896648146189" style="max-width: 315px; min-width: 315px;">
+                        <section>
+                    </blockquote>
+                </div>
             </div>
-
-            <!-- VIDEO 2 (Your micahdaileywhite video) -->
-            <div class="video-snap-slot">
-                <blockquote class="tiktok-embed" cite="https://tiktok.com" data-video-id="7648426896648146189" style="max-width: 325px; min-width: 325px;">
-                    <section>
-                </blockquote>
-            </div>
-
         </div>
 
     </div>
 
-    <!-- THIS TRACKING SCRIPT MAKES THE TIOTOK VIDEOS APPEAR ON GITHUB PAGES -->
+    <!-- TikTok Engine Scripts -->
     <script async src="https://tiktok.com"></script>
 
 </body>
-<!-- Roblox Interactive Play Card Container -->
-<div style="max-width: 400px; border: 2px solid #232527; border-radius: 12px; background: #191B1D; font-family: sans-serif; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3); color: #FFFFFF; margin: 20px auto;">
-  
-  <!-- Custom Game Banner Image -->
-  <div style="width: 100%; height: 180px; background: #393B3D; display: flex; align-items: center; justify-content: center;">
-    <span style="color: #AAAAAA; font-size: 14px;">[ Place Game Thumbnail Image URL Here ]</span>
-  </div>
-
-  <!-- Game Details Section -->
-  <div style="padding: 20px; text-align: center;">
-    <h2 style="margin: 0 0 8px 0; font-size: 22px; font-weight: bold; color: #FFFFFF;">My Roblox Game</h2>
-    <p style="margin: 0 0 20px 0; font-size: 14px; color: #B8B8B8;">Click below to launch and play directly in Roblox!</p>
-    
-    <!-- The Deep Link Play Button (Triggers the Local Client App) -->
-    <!-- REPLACE '1818' WITH YOUR ACTUAL ROBLOX PLACE ID NUMBER -->
-    <a href="roblox://placeId=1818" style="display: inline-block; background: #00E266; color: #000000; font-weight: bold; font-size: 16px; padding: 12px 35px; border-radius: 8px; text-decoration: none; transition: transform 0.2s; box-shadow: 0 4px 10px rgba(0,226,102,0.3);">
-      ▶ PLAY NOW
-    </a>
-  </div>
-</div>
-
+</html>
